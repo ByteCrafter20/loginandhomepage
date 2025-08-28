@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Account</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      background: #f5f1e6; 
+      background-image: radial-gradient(circle at top left, #e8decf, #f5f1e6);
+      color: #4b3f2f;
+    }
+
+    .card {
+      background: #fdfaf4;
+      padding: 30px;
+      border-radius: 12px;
+      border: 2px solid #b19777;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+      width: 360px;
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-family: "Georgia", serif;
+      font-size: 24px;
+      color: #3e2c1c;
+      border-bottom: 2px solid #b19777;
+      padding-bottom: 8px;
+    }
+
+    .account-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border: 1px solid #b19777;
+      border-radius: 8px;
+      background: #fdf6e9;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .account:hover {
+      background: #e9d9c0;
+    }
+
+    .account-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #3e2c1c;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #b19777;
+      background: #e0cda9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #3e2c1c;
+      font-family: "Georgia", serif;
+    }
+
+    .switch-btn {
+      padding: 8px 14px;
+      background: #8b5e3c;
+      border: none;
+      border-radius: 6px;
+      color: #fffaf0;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .switch-btn:hover {
+      background: #6d4429;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #4b3f2f;
+    }
+
+    .footer-text a {
+      color: #8b5e3c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Switch Account</h2>
+    <p>Select an account to continue</p>
+
+    <div class="account-list">
+      <div class="account" onclick="switchAccount('Username1')">
+        <div class="account-info">
+          <div class="avatar">U</div>
+          <span>Username1</span>
+        </div>
+        <button class="switch-btn">Switch</button>
+      </div>
+
+      <div class="account" onclick="switchAccount('Username2')">
+        <div class="account-info">
+          <div class="avatar">U</div>
+          <span>Username2</span>
+        </div>
+        <button class="switch-btn">Switch</button>
+      </div>
+
+      <div class="account" onclick="switchAccount('Username3')">
+        <div class="account-info">
+          <div class="avatar">U</div>
+          <span>Username3</span>
+        </div>
+        <button class="switch-btn">Switch</button>
+      </div>
+    </div>
+
+    <div class="footer-text">
+      Not your account? <a href="login.html">Log into another</a>
+    </div>
+  </div>
+
+  <script>
+    function switchAccount(name) {
+      alert("🔄 Switching to " + name + "'s account...");
+      window.location.href = "switchaccount.html"; 
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Successful</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #fdf6e3; /* parchment tone */
+      color: #3b2f2f;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff8dc; /* antique white */
+      padding: 35px;
+      border-radius: 12px;
+      border: 2px solid #bfa76f;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+      max-width: 360px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #5a4632;
+      text-shadow: 1px 1px #e0cda9;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #4b3d2a;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      background: #b5895d;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: "Georgia", serif;
+      font-weight: bold;
+      box-shadow: 2px 2px 0px #4b3d2a;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #7a5c3f;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>✔ Signup Successful!</h2>
+    <p>Your account has been created successfully.</p>
+    <p>You will be redirected back to signup shortly...</p>
+    <a href="login.html" class="btn">Go to Login</a>
+  </div>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "signup.html";
+    }, 3000);
+  </script>
+</body>
+</html>
