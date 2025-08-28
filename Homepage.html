@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: "Georgia", serif;
-      background: #f5f1e6; /* parchment color */
+      background: #f5f1e6;
       background-image: radial-gradient(circle at top left, #e8decf, #f5f1e6);
       color: #3e2c1c;
     }
@@ -24,6 +24,7 @@
       position: sticky;
       top: 0;
       border-bottom: 3px solid #b19777;
+      z-index: 1000;
     }
 
     nav .logo {
@@ -34,24 +35,47 @@
       letter-spacing: 1px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-      gap: 20px;
-    }
-
-    nav ul li a {
+    /* Profile dropdown */
+    .profile {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
       color: #fdf6e9;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s;
-      font-weight: bold;
     }
 
-    nav ul li a:hover {
+    .profile:hover {
       color: #ffdb99;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      background: #fdfaf4;
+      border: 2px solid #b19777;
+      border-radius: 8px;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+      min-width: 160px;
+      z-index: 1001;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 15px;
+      color: #3e2c1c;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid #e0cda9;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background: #e9d9c0;
     }
 
     header {
@@ -80,49 +104,39 @@
       box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
       display: block;
     }
-
-    footer {
-      background: #6d4429;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-      border-top: 3px solid #b19777;
-    }
-
-    footer a.logout {
-      background: #8b5e3c;
-      padding: 8px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #fffaf0;
-      font-weight: bold;
-      font-family: "Georgia", serif;
-    }
-
-    footer a.logout:hover {
-      background: #5a3923;
-    }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="logo">Homepage</div>
-    <i class="material-icons" style="font-size:48px;color:black">account_circle</i>
+    <div class="profile" onclick="toggleDropdown()">
+      <i class="material-icons" style="font-size:36px;">account_circle</i>
+      <div class="dropdown" id="dropdownMenu">
+        <a href="login.html">Logout</a>
+      </div>
+    </div>
   </nav>
 
   <main>
-    <img src="log in.jpg" alt="Vintage Image 1">
+    <img src="signup1.jpg" alt="Vintage Image 1">
     <img src="signup.jpg" alt="Vintage Image 2">
     <img src="login1.jpg" alt="Vintage Image 3">
-    <img src="signup1.jpg" alt="Vintage Image 4">
-    <img src="Homepage.jpg" alt="Vintage Image 3">
+    <img src="log in.jpg" alt="Vintage Image 4">
+    <img src="homepage.jpg" alt="Vintage Image 5">
   </main>
 
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
 
-  <footer>
-     <a href="login.html" class="logout">Logout</a>
-     <a href="switchaccount.html" class="Switch account">Switch Account</a>
-  </footer>
+    window.onclick = function(event) {
+      if (!event.target.closest('.profile')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
